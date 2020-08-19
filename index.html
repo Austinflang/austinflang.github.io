@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <script>
 function allowDrop(ev) {
   ev.preventDefault();
@@ -18,17 +16,19 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 </script>
-
 <style>
+.content {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 0px;
+}
 table, td, th {
   border: 1px solid black;
-  height: 100px;
-}
-table {
-  width: 400px;
-}
-th {
-  height: 100px;
+  height: 108px;
+  width: 108px;
+  table-layout: fixed;
+  margin-top: 50px;
 }
 .center {
   margin-left: auto;
@@ -36,31 +36,35 @@ th {
 }
 </style>
 </head>
-
 <body>
+<div class="content">
 <h1 style="text-align:center;">Welcome to Classy's Naruto x Boruto Ninja Tribes Team Builder</h1>
 <p style="text-align:center;">Drag and drop the different units to their respective spots on the team, hover over a unit to see its abilities</p>
+<img id="setup" src="setup.png" class="center">
 <table class="center">
   <tr>
-    <th ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)"> 
-    <th ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
-    <th ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)">
+    	<img id="boruto" src="boruto.png" draggable="true" ondragstart="drag(event)" width="108px" height="108px">
+    </th ondrop="drop(event)" ondragover="allowDrop(event)"> 
+    <td ondrop="drop(event)" ondragover="allowDrop(event)">
+    	<img id="sarada" src="sarada.png" draggable="true" ondragstart="drag(event)" width="108px" height="108px">
+    </th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)">
+    	<img id="mitsuki" src="mitsuki.png" draggable="true" ondragstart="drag(event)" width="108px" height="108px">
+    </th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
   </tr>
   <tr>
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-  </tr>
-  <tr>
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
   </tr>
 </table>
+</div>
 </body>
-
-<img id="drag1" src="pain-frame.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
-<img id="drag2" src="pain-frame.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
-<img id="drag3" src="pain-frame.jpg" draggable="true" ondragstart="drag(event)" width="100" height="100">
-
 </html>
