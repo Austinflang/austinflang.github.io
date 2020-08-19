@@ -12,7 +12,7 @@ function drag(ev) {
 }
 function drop(ev) {
   ev.preventDefault();
-  if (!ev.target.hasChildNodes()) {
+  if (ev.target.hasChildNodes()) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
   }
