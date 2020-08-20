@@ -34,7 +34,12 @@ function drop(ev) {
   margin-left: auto;
   margin-right: auto;
 }
-table, td, th {
+table.a, td, th {
+  height: 80px;
+  width: 80px;
+  table-layout: fixed;
+}
+table.b, td, th {
   height: 80px;
   width: 80px;
   table-layout: fixed;
@@ -46,8 +51,27 @@ table, td, th {
 <div class="content">
 <h1 style="text-align:center;">Welcome to Classy's Naruto x Boruto Ninja Tribes Team Builder</h1>
 <p style="text-align:center;">Drag and drop the different units to their respective spots on the team, hover over a unit to see its abilities</p>
+<div style="position:relative">
 <img id="setup" src="setup.png" class="center">
-<table class="center">
+<table id="a" class="center">
+  <tr>
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
+  </tr>
+  <tr>
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+  </tr>
+  <tr>
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+  </tr>
+</table>
+</div>
+<table id="b" class="center">
   <tr>
     <td ondrop="drop(event)" ondragover="allowDrop(event)">
     	<img id="boruto" src="boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
