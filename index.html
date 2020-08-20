@@ -33,13 +33,14 @@ th, td {
   height: 80px;
   width: 80px;
 }
-table#a {
+#table1 {
   table-layout: fixed;
   position: absolute;
   left: 150;
   background-color: green;
+  border-spacing: 15px 35px;
 }
-table#b {
+#table2 {
   table-layout: fixed;
   margin-top: 25px;
 }
@@ -51,7 +52,7 @@ table#b {
 <p style="text-align:center;">Drag and drop the different units to their respective spots on the team, hover over a unit to see its abilities</p>
 <div style="position:relative">
 <img id="setup" src="setup.png" class="center">
-<table id="a" class="center">
+<table id="table1" class="center">
   <tr>
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></th ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -69,7 +70,7 @@ table#b {
   </tr>
 </table>
 </div>
-<table id="b" class="center">
+<table id="table2" class="center">
   <tr>
     <td ondrop="drop(event)" ondragover="allowDrop(event)">
     	<img id="boruto" src="boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
