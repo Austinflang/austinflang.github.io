@@ -34,14 +34,15 @@ function drop(ev) {
   margin-left: auto;
   margin-right: auto;
 }
-table.a, td, th {
+th, td {
   height: 80px;
   width: 80px;
-  table-layout: fixed;
 }
-table.b, td, th {
-  height: 80px;
-  width: 80px;
+table#a {
+  table-layout: fixed;
+  position: absolute;
+}
+table#b {
   table-layout: fixed;
   margin-top: 25px;
 }
