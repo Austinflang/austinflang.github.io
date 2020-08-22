@@ -14,7 +14,7 @@ function drop(ev) {
   ev.preventDefault();
   if (!ev.currentTarget.hasChildNodes()) {
     var data = ev.dataTransfer.getData("text");
-    document.getElementById(data).remove();
+    
     ev.target.appendChild(document.getElementById(data));
   }
 }
@@ -103,9 +103,10 @@ th, td {
     </th ondrop="drop(event)" ondragover="allowDrop(event)">
   </tr>
   <tr>
-    <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)">
-       <img id="ino" src="ino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+    <img id="ino" src="ino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+    </td ondrop="drop(event)" ondragover="allowDrop(event)">
+    <td ondrop="drop(event)" ondragover="allowDrop(event)"> 
     </td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
