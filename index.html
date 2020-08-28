@@ -25,7 +25,8 @@ function drop(ev) {
   background: white;
   padding: 0px;
 }
-.center {
+img {
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -37,13 +38,15 @@ th, td {
 #table1 {
   table-layout: fixed;
   position: absolute;
-  top: 50.5px; 
-  left: 159px;
-  border-spacing: 26px 48px;
+  top: 47.5px; 
+  left: 172px;
+  border-spacing: 26px 52px;
 }
 #table2 {
   table-layout: fixed;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid black;
 }
 </style>
@@ -53,8 +56,8 @@ th, td {
 <h1 style="text-align:center;">Welcome to Naruto x Boruto Ninja Tribes Team Builder</h1>
 <p style="text-align:center;">Drag and drop the different units to their respective spots on the team. You can also drag units back to the bench. Grab a unit and hold it to either arrow on the window's sidebar to scroll. (Unimplemented) Click on a unit to see its abilities.</p>
 <div style="position:relative">
-<img id="setup" src="setup.png" class="center">
-<table id="table1" class="center">
+<img id="setup" src="setup.png">
+<table id="table1">
   <tr>
     <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
     <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -73,7 +76,7 @@ th, td {
 </table>
 </div>
 <div style="position:relative">
-<table id="table2" class="center">
+<table id="table2">
   <tr>
     <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
       <img id="boruto" src="boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
