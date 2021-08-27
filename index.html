@@ -1,415 +1,440 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-function drop(ev) {
-  ev.preventDefault();
-  if (!ev.currentTarget.children.length > 0) {
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-}
-</script>
-<style>
-@font-face {
-  font-family: font1;
-  src: url(rodinpro.otf);
-}
-div {
-  font-family: font1;
-  font-size: 12px;
-}
-body {
-  background-image: url("background.jpg");
-}
-.content {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 0px;
-}
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-th, td {
-  height: 80px;
-  min-width: 80px;
-  max-width: 80px;
-}
-#table1 {
-  table-layout: fixed;
-  position: absolute;
-  top: 47.5px; 
-  left: 172px;
-  border-spacing: 26px 52px;
-}
-#table2 {
-  table-layout: fixed;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-}
-</style>
-</head>
-<body>
-<div class="content">
-<h1 style="text-align:center;">Welcome to Naruto x Boruto Ninja Tribes Team Builder</h1>
-<p style="text-align:center;">Drag and drop the different units to their respective spots on the team. You can also drag units back to the bench. Grab a unit and hold it to either arrow on the window's right sidebar to scroll. (Unimplemented) Click on a unit to see its detailed information.</p>
-<p style="text-align:center;"><a href=https://youtu.be/AK78msJr2BU>Need help? Check out this video tutorial.</a></p> 
-<div style="position:relative">
-<img id="setup" src="setup.png">
-<table id="table1">
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-</table>
-</div>
-<div style="position:relative">
-<table id="table2">
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="boruto" src="boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)"> 
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sarada" src="sarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="mitsuki" src="mitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="urnarukage" src="urnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="srnarukage" src="srnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="papasasuke" src="papasasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="mamasakura" src="mamasakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="urhebi" src="urhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sakura" src="sakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="ino" src="ino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">    
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kiba" src="kiba.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="hinata" src="hinata.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="shino" src="shino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="gaara" src="gaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="temari" src="temari.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="jiraiya" src="jiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="tsunade" src="tsunade.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="orochimaru" src="orochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kabuto" src="kabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="yamato" src="yamato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sai" src="sai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="hiruzen" src="hiruzen.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="zabuza" src="zabuza.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="haku" src="haku.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="darui" src="darui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="bee" src="bee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="ay" src="ay.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="lee" src="lee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="tenten" src="tenten.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="suigetsu" src="suigetsu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="jugo" src="jugo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="kirin" src="kirin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="karin" src="karin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="deidara" src="deidara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sasori" src="sasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="chiyo" src="chiyo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="blossom" src="blossom.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="itachi" src="itachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kisame" src="kisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="srnaruto" src="srnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="urnaruto" src="urnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="neji" src="neji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="choji" src="choji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="shikamaru" src="shikamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="guy" src="guy.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kakashi" src="kakashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="konohamaru" src="konohamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="asuma" src="asuma.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="hidan" src="hidan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kakuzu" src="kakuzu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kankuro" src="kankuro.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="pain" src="pain.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="konan" src="konan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="srhebi" src="srhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="smjiraiya" src="smjiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="smnaruto" src="smnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="gsorochimaru" src="gsorochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="cm2sasuke" src="cm2sasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="fbsarada" src="fbsarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="mtssakura" src="mtssakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kamui" src="kamui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="berserk" src="berserk.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="ursasori" src="ursasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sublime" src="sublime.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="tobi" src="tobi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="revsasuke" src="revsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">	
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="criminal" src="criminal.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="urboruto" src="urboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="unwnarukage" src="unwnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-			<img id="danzo" src="danzo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="tgaara" src="tgaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">      	    
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="santaruto" src="santaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kidbito" src="kidbito.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kidkashi" src="kidkashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="minato" src="minato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">	
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="sixt" src="sixt.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="urmitsuki" src="urmitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="papamaru" src="papamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 	
-			<img id="urkisame" src="urkisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">  
-			<img id="beev2" src="beev2.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="mei" src="mei.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="ohnoki" src="ohnoki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kidsasuke" src="kidsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kidnaruto" src="kidnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">	
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kcmnaruto" src="kcmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="kushina" src="kushina.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="whitemask" src="whitemask.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="gskabuto" src="gskabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px"> 	
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="timeboruto" src="timeboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="hashirama" src="hashirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-	<tr>
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="tobirama" src="tobirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-            <img id="timesasuke" src="timesasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="nagato" src="nagato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondaragover="allowDrop(event)">	
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="shikadai" src="shikadai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="edotachi" src="edotachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-			<img id="inojin" src="inojin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-            <img id="madara" src="madara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-            <img id="klmnaruto" src="klmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-		</td ondrop="drop(event)" ondragover="allowDrop(event)">
-	</tr>
-</table>
-<p style="text-align:center;">Programmed by Classy#9273 with credits given to Teaisnt#9441 for element design. All original image assets belong to Bandai Namco. For further information and contact opportunities, join the <a href="https://discord.gg/33MCma4">Naruto x Boruto Ninja Tribes community Discord server.</a></p>
-</div>
-</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Scripts-->
+        <script>
+            function allowDrop(ev) {
+              ev.preventDefault();
+            }
+            function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+            function drop(ev) {
+              ev.preventDefault();
+              if (!ev.currentTarget.children.length > 0) {
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+              }
+            }
+            var stop = true;
+                $(".draggable").on("drag", function (e) {
+                    stop = true;
+                    if (e.originalEvent.clientY < 150) {
+                        stop = false;
+                        scroll(-1)
+                    }
+                    if (e.originalEvent.clientY > ($(window).height() - 150)) {
+                        stop = false;
+                        scroll(1)
+                    }
+                });
+                $(".draggable").on("dragend", function (e) {
+                     stop = true;
+                });
+                var scroll = function (step) {
+                    var scrollY = $(window).scrollTop();
+                    $(window).scrollTop(scrollY + step);
+                    if (!stop) {
+                        setTimeout(function () { scroll(step) }, 20);
+                    }
+                }
+        </script>
+        <!-- Styles-->
+        <style>
+            @font-face {
+            font-family: font1;
+            src: url(assets/rodinpro.otf);
+            }
+            div {
+            font-family: font1;
+            font-size: 12px;
+            }
+            body {
+            background-image: url("assets/background.jpg");
+            }
+            .content {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 0px;
+            }
+            img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            }
+            th, td {
+            height: 80px;
+            min-width: 80px;
+            max-width: 80px;
+            }
+            #table1 {
+            table-layout: fixed;
+            position: absolute;
+            top: 47.5px; 
+            left: 172px;
+            border-spacing: 26px 52px;
+            }
+            #table2 {
+            table-layout: fixed;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            }
+        </style>
+        <!-- HTML-->
+    </head>
+    <body>
+        <div class="content">
+            <h1 style="text-align:center;">Welcome to Naruto x Boruto Ninja Tribes Team Builder</h1>
+            <p style="text-align:center;">Drag and drop the different units to their respective spots on the team. You can also drag units back to the bench. Grab a unit and hold it to either arrow on the window's right sidebar to scroll. (Unimplemented) Click on a unit to see its detailed information.</p>
+            <p style="text-align:center;"><a href=https://youtu.be/AK78msJr2BU>Need help? Check out this video tutorial.</a></p>
+            <div style="position:relative">
+                <img id="setup" src="assets/teamsetup.png">
+                <table id="table1">
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                </table>
+            </div>
+            <div style="position:relative">
+                <table id="table2">
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="boruto" src="assets/icon/boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sarada" src="assets/icon/sarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="mitsuki" src="assets/icon/mitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="urnarukage" src="assets/icon/urnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="srnarukage" src="assets/icon/srnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="papasasuke" src="assets/icon/papasasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="mamasakura" src="assets/icon/mamasakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="urhebi" src="assets/icon/urhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sakura" src="assets/icon/sakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="ino" src="assets/icon/ino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">    
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kiba" src="assets/icon/kiba.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="hinata" src="assets/icon/hinata.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="shino" src="assets/icon/shino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="gaara" src="assets/icon/gaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="temari" src="assets/icon/temari.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="jiraiya" src="assets/icon/jiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="tsunade" src="assets/icon/tsunade.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="orochimaru" src="assets/icon/orochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kabuto" src="assets/icon/kabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="yamato" src="assets/icon/yamato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sai" src="assets/icon/sai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="hiruzen" src="assets/icon/hiruzen.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="zabuza" src="assets/icon/zabuza.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="haku" src="assets/icon/haku.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="darui" src="assets/icon/darui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="bee" src="assets/icon/bee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="ay" src="assets/icon/ay.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="lee" src="assets/icon/lee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="tenten" src="assets/icon/tenten.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="suigetsu" src="assets/icon/suigetsu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="jugo" src="assets/icon/jugo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="kirin" src="assets/icon/kirin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="karin" src="assets/icon/karin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="deidara" src="assets/icon/deidara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sasori" src="assets/icon/sasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="chiyo" src="assets/icon/chiyo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="blossom" src="assets/icon/blossom.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="itachi" src="assets/icon/itachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kisame" src="assets/icon/kisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="srnaruto" src="assets/icon/srnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="urnaruto" src="assets/icon/urnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="neji" src="assets/icon/neji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="choji" src="assets/icon/choji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="shikamaru" src="assets/icon/shikamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="guy" src="assets/icon/guy.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kakashi" src="assets/icon/kakashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="konohamaru" src="assets/icon/konohamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="asuma" src="assets/icon/asuma.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="hidan" src="assets/icon/hidan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kakuzu" src="assets/icon/kakuzu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kankuro" src="assets/icon/kankuro.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="pain" src="assets/icon/pain.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="konan" src="assets/icon/konan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="srhebi" src="assets/icon/srhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="smjiraiya" src="assets/icon/smjiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="smnaruto" src="assets/icon/smnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="gsorochimaru" src="assets/icon/gsorochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="cm2sasuke" src="assets/icon/cm2sasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="fbsarada" src="assets/icon/fbsarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="mtssakura" src="assets/icon/mtssakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kamui" src="assets/icon/kamui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="berserk" src="assets/icon/berserk.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="ursasori" src="assets/icon/ursasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sublime" src="assets/icon/sublime.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="tobi" src="assets/icon/tobi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="revsasuke" src="assets/icon/revsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="criminal" src="assets/icon/criminal.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="urboruto" src="assets/icon/urboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="unwnarukage" src="assets/icon/unwnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
+                            <img id="danzo" src="assets/icon/danzo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="tgaara" src="assets/icon/tgaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">      	    
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="santaruto" src="assets/icon/santaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kidbito" src="assets/icon/kidbito.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kidkashi" src="assets/icon/kidkashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="minato" src="assets/icon/minato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="sixt" src="assets/icon/sixt.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="urmitsuki" src="assets/icon/urmitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="papamaru" src="assets/icon/papamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 	
+                            <img id="urkisame" src="assets/icon/urkisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">  
+                            <img id="beev2" src="assets/icon/beev2.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="mei" src="assets/icon/mei.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="ohnoki" src="assets/icon/ohnoki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kidsasuke" src="assets/icon/kidsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kidnaruto" src="assets/icon/kidnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kcmnaruto" src="assets/icon/kcmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="kushina" src="assets/icon/kushina.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="whitemask" src="assets/icon/whitemask.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="gskabuto" src="assets/icon/gskabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px"> 	
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="timeboruto" src="assets/icon/timeboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="hashirama" src="assets/icon/hashirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                    <tr>
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="tobirama" src="assets/icon/tobirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="timesasuke" src="assets/icon/timesasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="nagato" src="assets/icon/nagato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondaragover="allowDrop(event)">	
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="shikadai" src="assets/icon/shikadai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="edotachi" src="assets/icon/edotachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="inojin" src="assets/icon/inojin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="madara" src="assets/icon/madara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            <img id="klmnaruto" src="assets/icon/klmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
+                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </tr>
+                </table>
+                <p style="text-align:center;">Created by Classy#9273 with credits given to Teaisnt#9441 for element design. All original image assets belong to Bandai Namco. For further information and contact opportunities, join the <a href="https://discord.gg/33MCma4">Naruto x Boruto Ninja Tribes community Discord server.</a></p>
+            </div>
+        </div>
+    </body>
 </html>
