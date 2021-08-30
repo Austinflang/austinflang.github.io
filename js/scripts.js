@@ -35,7 +35,12 @@
             document.getElementById('top-7'),
             document.getElementById('top-8'),
             document.getElementById('top-9'),
-            document.getElementById('bottom')]);
+            document.getElementById('bottom')], 
+            {
+                accepts: function (el, target) {
+                    return target.children.length == 0
+                }
+            });
 
         dragula([sortable]);
 
