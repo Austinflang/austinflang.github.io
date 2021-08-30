@@ -1,0 +1,178 @@
+body {
+    background-image: url("../assets/background.jpg");
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@font-face {
+    font-family: rodinpro;
+    src: url(../assets/rodinpro.otf);
+    font-stretch: ultra-condensed;
+}
+
+.content {
+    font-family: rodinpro;
+    text-align: center;
+}
+
+html,
+body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body,
+input,
+button {
+    font-family: rodinpro;
+    font-size: 14px;
+    color: #ecf0f1;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+}
+
+a,
+a:hover {
+    color: #ecf0f1;
+}
+
+.team-1-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 199px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-2-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 307px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-3-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 415px;
+    top: 100px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-4-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 199px;
+    top: 233px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-5-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 307px;
+    top: 233px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-6-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 415px;
+    top: 234px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-7-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 199px;
+    top: 367px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-8-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 308px;
+    top: 367px;
+    width: 80px;
+    height: 80px;
+}
+
+.team-9-container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 415px;
+    top: 367px;
+    width: 80px;
+    height: 80px;
+}
+
+.unit-container {
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.2);
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    justify-content: space-evenly;
+}
+
+.unit-container>div,
+.gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+}
+
+.unit-container>div {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+#left-lovehandles>div,
+#right-lovehandles>div {
+    cursor: initial;
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}

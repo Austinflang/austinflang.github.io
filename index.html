@@ -3,438 +3,132 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Scripts-->
-        <script>
-            function allowDrop(ev) {
-              ev.preventDefault();
-            }
-            function drag(ev) {
-              ev.dataTransfer.setData("text", ev.target.id);
-            }
-            function drop(ev) {
-              ev.preventDefault();
-              if (!ev.currentTarget.children.length > 0) {
-                var data = ev.dataTransfer.getData("text");
-                ev.target.appendChild(document.getElementById(data));
-              }
-            }
-            var stop = true;
-                $(".draggable").on("drag", function (e) {
-                    stop = true;
-                    if (e.originalEvent.clientY < 150) {
-                        stop = false;
-                        scroll(-1)
-                    }
-                    if (e.originalEvent.clientY > ($(window).height() - 150)) {
-                        stop = false;
-                        scroll(1)
-                    }
-                });
-                $(".draggable").on("dragend", function (e) {
-                     stop = true;
-                });
-                var scroll = function (step) {
-                    var scrollY = $(window).scrollTop();
-                    $(window).scrollTop(scrollY + step);
-                    if (!stop) {
-                        setTimeout(function () { scroll(step) }, 20);
-                    }
-                }
-        </script>
-        <!-- Styles-->
-        <style>
-            @font-face {
-            font-family: font1;
-            src: url(assets/rodinpro.otf);
-            }
-            div {
-            font-family: font1;
-            font-size: 12px;
-            }
-            body {
-            background-image: url("assets/background.jpg");
-            }
-            .content {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 0px;
-            }
-            img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            }
-            th, td {
-            height: 80px;
-            min-width: 80px;
-            max-width: 80px;
-            }
-            #table1 {
-            table-layout: fixed;
-            position: absolute;
-            top: 47.5px; 
-            left: 172px;
-            border-spacing: 26px 52px;
-            }
-            #table2 {
-            table-layout: fixed;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid black;
-            }
-        </style>
-    <!-- HTML-->
+        <link href='dist/dragula.css' rel='stylesheet' type='text/css' />
+        <link href='css/styles.css' rel='stylesheet' type='text/css' />
     </head>
     <body>
         <div class="content">
-            <h1 style="text-align:center;">Welcome to Naruto x Boruto Ninja Tribes Team Builder</h1>
-            <p style="text-align:center;">Drag and drop the different units to their respective spots on the team. You can also drag units back to the bench. Grab a unit and hold it to either arrow on the window's right sidebar to scroll. (Unimplemented) Click on a unit to see its detailed information.</p>
-            <p style="text-align:center;"><a href=https://youtu.be/AK78msJr2BU>Need help? Check out this video tutorial.</a></p>
-            <div style="position:relative">
-                <img id="setup" src="assets/teamsetup.png">
-                <table id="table1">
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"></td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                </table>
-            </div>
-            <div style="position:relative">
-                <table id="table2">
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="boruto" src="assets/icon/boruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)"> 
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sarada" src="assets/icon/sarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="mitsuki" src="assets/icon/mitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="urnarukage" src="assets/icon/urnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="srnarukage" src="assets/icon/srnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="papasasuke" src="assets/icon/papasasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="mamasakura" src="assets/icon/mamasakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="urhebi" src="assets/icon/urhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sakura" src="assets/icon/sakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="ino" src="assets/icon/ino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">    
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kiba" src="assets/icon/kiba.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="hinata" src="assets/icon/hinata.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="shino" src="assets/icon/shino.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="gaara" src="assets/icon/gaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="temari" src="assets/icon/temari.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="jiraiya" src="assets/icon/jiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="tsunade" src="assets/icon/tsunade.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="orochimaru" src="assets/icon/orochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kabuto" src="assets/icon/kabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="yamato" src="assets/icon/yamato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sai" src="assets/icon/sai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="hiruzen" src="assets/icon/hiruzen.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="zabuza" src="assets/icon/zabuza.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="haku" src="assets/icon/haku.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="darui" src="assets/icon/darui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="bee" src="assets/icon/bee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="ay" src="assets/icon/ay.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="lee" src="assets/icon/lee.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="tenten" src="assets/icon/tenten.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="suigetsu" src="assets/icon/suigetsu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="jugo" src="assets/icon/jugo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="kirin" src="assets/icon/kirin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="karin" src="assets/icon/karin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="deidara" src="assets/icon/deidara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sasori" src="assets/icon/sasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="chiyo" src="assets/icon/chiyo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="blossom" src="assets/icon/blossom.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="itachi" src="assets/icon/itachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kisame" src="assets/icon/kisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="srnaruto" src="assets/icon/srnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="urnaruto" src="assets/icon/urnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="neji" src="assets/icon/neji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="choji" src="assets/icon/choji.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="shikamaru" src="assets/icon/shikamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="guy" src="assets/icon/guy.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kakashi" src="assets/icon/kakashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="konohamaru" src="assets/icon/konohamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="asuma" src="assets/icon/asuma.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="hidan" src="assets/icon/hidan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kakuzu" src="assets/icon/kakuzu.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kankuro" src="assets/icon/kankuro.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="pain" src="assets/icon/pain.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="konan" src="assets/icon/konan.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="srhebi" src="assets/icon/srhebi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="smjiraiya" src="assets/icon/smjiraiya.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="smnaruto" src="assets/icon/smnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="gsorochimaru" src="assets/icon/gsorochimaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="cm2sasuke" src="assets/icon/cm2sasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="fbsarada" src="assets/icon/fbsarada.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="mtssakura" src="assets/icon/mtssakura.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kamui" src="assets/icon/kamui.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="berserk" src="assets/icon/berserk.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="ursasori" src="assets/icon/ursasori.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sublime" src="assets/icon/sublime.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="tobi" src="assets/icon/tobi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="revsasuke" src="assets/icon/revsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="criminal" src="assets/icon/criminal.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="urboruto" src="assets/icon/urboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="unwnarukage" src="assets/icon/unwnarukage.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 
-                            <img id="danzo" src="assets/icon/danzo.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="tgaara" src="assets/icon/tgaara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">      	    
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="santaruto" src="assets/icon/santaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kidbito" src="assets/icon/kidbito.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kidkashi" src="assets/icon/kidkashi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="minato" src="assets/icon/minato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">    
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="sixt" src="assets/icon/sixt.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="urmitsuki" src="assets/icon/urmitsuki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="papamaru" src="assets/icon/papamaru.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)"> 	
-                            <img id="urkisame" src="assets/icon/urkisame.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">  
-                            <img id="beev2" src="assets/icon/beev2.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="mei" src="assets/icon/mei.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="ohnoki" src="assets/icon/ohnoki.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kidsasuke" src="assets/icon/kidsasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kidnaruto" src="assets/icon/kidnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">	
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kcmnaruto" src="assets/icon/kcmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="kushina" src="assets/icon/kushina.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="whitemask" src="assets/icon/whitemask.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="gskabuto" src="assets/icon/gskabuto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px"> 	
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="timeboruto" src="assets/icon/timeboruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">	
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="hashirama" src="assets/icon/hashirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                    <tr>
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="tobirama" src="assets/icon/tobirama.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="timesasuke" src="assets/icon/timesasuke.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="nagato" src="assets/icon/nagato.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondaragover="allowDrop(event)">	
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="shikadai" src="assets/icon/shikadai.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="edotachi" src="assets/icon/edotachi.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="inojin" src="assets/icon/inojin.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="madara" src="assets/icon/madara.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            <img id="klmnaruto" src="assets/icon/klmnaruto.png" draggable="true" ondragstart="drag(event)" width="80px" height="80px">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <td ondrop="drop(event); console.log(event)" ondragover="allowDrop(event)">
-                            </td ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </tr>
-                </table>
-                <p style="text-align:center;">Created by Classy#9273 with credits given to Teaisnt#9441 for element design. All original assets belong to Bandai Namco. For further information and contact opportunities, join the <a href="https://discord.gg/33MCma4">Naruto x Boruto Ninja Tribes community Discord server.</a></p>
-            </div>
+        <h1>Welcome to Classy's Naruto x Boruto Ninja Tribes<br /> Team Building Tool</h1>
+        <p>Drag and drop the different units to their respective spots on the team. You can also drag units back to the bench. Grab a unit and use the mouse scroll to bring it up or down. Click on a unit to see its detailed information.</p>
+        <div style="position:relative">
+            <div id="top-1" class="team-1-container"></div>
+            <div id="top-2" class="team-2-container"></div>
+            <div id="top-3" class="team-3-container"></div>
+            <div id="top-4" class="team-4-container"></div>
+            <div id="top-5" class="team-5-container"></div>
+            <div id="top-6" class="team-6-container"></div>
+            <div id="top-7" class="team-7-container"></div>
+            <div id="top-8" class="team-8-container"></div>
+            <div id="top-9" class="team-9-container"></div>
+            <img id="setup" src="assets/teamsetup.png">                
         </div>
+        <div id="bottom" class="unit-container">
+            <img id="boruto" src="assets/icon/boruto.png" width="80px" height="80px">
+            <img id="sarada" src="assets/icon/sarada.png" width="80px" height="80px">
+            <img id="mitsuki" src="assets/icon/mitsuki.png" width="80px" height="80px">
+            <img id="urnarukage" src="assets/icon/urnarukage.png" width="80px" height="80px">
+            <img id="srnarukage" src="assets/icon/srnarukage.png" width="80px" height="80px">
+            <img id="papasasuke" src="assets/icon/papasasuke.png" width="80px" height="80px">
+            <img id="mamasakura" src="assets/icon/mamasakura.png" width="80px" height="80px">
+            <img id="urhebi" src="assets/icon/urhebi.png" width="80px" height="80px">
+            <img id="sakura" src="assets/icon/sakura.png" width="80px" height="80px">
+            <img id="ino" src="assets/icon/ino.png" width="80px" height="80px">
+            <img id="kiba" src="assets/icon/kiba.png" width="80px" height="80px">
+            <img id="hinata" src="assets/icon/hinata.png" width="80px" height="80px">
+            <img id="shino" src="assets/icon/shino.png" width="80px" height="80px">
+            <img id="gaara" src="assets/icon/gaara.png" width="80px" height="80px">
+            <img id="temari" src="assets/icon/temari.png" width="80px" height="80px">
+            <img id="jiraiya" src="assets/icon/jiraiya.png" width="80px" height="80px">
+            <img id="tsunade" src="assets/icon/tsunade.png" width="80px" height="80px">
+            <img id="orichimaru" src="assets/icon/orochimaru.png" width="80px" height="80px">
+            <img id="kabuto" src="assets/icon/kabuto.png" width="80px" height="80px">
+            <img id="yamato" src="assets/icon/yamato.png" width="80px" height="80px">
+            <img id="sai" src="assets/icon/sai.png" width="80px" height="80px">
+            <img id="hiruzen" src="assets/icon/hiruzen.png" width="80px" height="80px">
+            <img id="zabuza" src="assets/icon/zabuza.png" width="80px" height="80px">
+            <img id="haku" src="assets/icon/haku.png" width="80px" height="80px">
+            <img id="darui" src="assets/icon/darui.png" width="80px" height="80px">
+            <img id="bee" src="assets/icon/bee.png" width="80px" height="80px">
+            <img id="ay" src="assets/icon/ay.png" width="80px" height="80px">
+            <img id="lee" src="assets/icon/lee.png" width="80px" height="80px">
+            <img id="tenten" src="assets/icon/tenten.png" width="80px" height="80px">
+            <img id="suigetsu" src="assets/icon/suigetsu.png" width="80px" height="80px">
+            <img id="jugo" src="assets/icon/jugo.png" width="80px" height="80px">
+            <img id="kirin" src="assets/icon/kirin.png" width="80px" height="80px">
+            <img id="karin" src="assets/icon/karin.png" width="80px" height="80px">
+            <img id="deidara" src="assets/icon/deidara.png" width="80px" height="80px">
+            <img id="sasori" src="assets/icon/sasori.png" width="80px" height="80px">
+            <img id="chiyo" src="assets/icon/chiyo.png" width="80px" height="80px">
+            <img id="blossom" src="assets/icon/blossom.png" width="80px" height="80px">
+            <img id="itachi" src="assets/icon/itachi.png" width="80px" height="80px">
+            <img id="kisame" src="assets/icon/kisame.png" width="80px" height="80px">
+            
+            <img id="urnaruto" src="assets/icon/urnaruto.png" width="80px" height="80px">
+            <img id="neji" src="assets/icon/neji.png" width="80px" height="80px">
+            <img id="choji" src="assets/icon/choji.png" width="80px" height="80px">
+            <img id="shikamaru" src="assets/icon/shikamaru.png" width="80px" height="80px">
+            <img id="guy" src="assets/icon/guy.png" width="80px" height="80px">
+            <img id="kakashi" src="assets/icon/kakashi.png" width="80px" height="80px">
+            <img id="konohamaru" src="assets/icon/konohamaru.png" width="80px" height="80px">
+            <img id="asuma" src="assets/icon/asuma.png" width="80px" height="80px">
+            <img id="hidan" src="assets/icon/hidan.png" width="80px" height="80px">
+            <img id="kakuzu" src="assets/icon/kakuzu.png" width="80px" height="80px">
+            <img id="kankuro" src="assets/icon/kankuro.png" width="80px" height="80px">
+            <img id="pain" src="assets/icon/pain.png" width="80px" height="80px">
+            <img id="konan" src="assets/icon/konan.png" width="80px" height="80px">
+            <img id="srhebi" src="assets/icon/srhebi.png" width="80px" height="80px">
+            <img id="smjiraiya" src="assets/icon/smjiraiya.png" width="80px" height="80px">
+            <img id="smnaruto" src="assets/icon/smnaruto.png" width="80px" height="80px">
+            <img id="gsorochimaru" src="assets/icon/gsorochimaru.png" width="80px" height="80px">
+            <img id="cm2sasuke" src="assets/icon/cm2sasuke.png" width="80px" height="80px">
+            <img id="fbsarada" src="assets/icon/fbsarada.png" width="80px" height="80px">
+            <img id="mtssakura" src="assets/icon/mtssakura.png" width="80px" height="80px">
+            <img id="kamui" src="assets/icon/kamui.png" width="80px" height="80px">
+            <img id="berserk" src="assets/icon/berserk.png" width="80px" height="80px">
+            <img id="ursasori" src="assets/icon/ursasori.png" width="80px" height="80px">
+            <img id="sublime" src="assets/icon/sublime.png" width="80px" height="80px">    
+            <img id="tobi" src="assets/icon/tobi.png" width="80px" height="80px">
+            <img id="revsasuke" src="assets/icon/revsasuke.png" width="80px" height="80px">
+            <img id="criminal" src="assets/icon/criminal.png" width="80px" height="80px">
+            <img id="urboruto" src="assets/icon/urboruto.png" width="80px" height="80px">
+            <img id="unwnarukage" src="assets/icon/unwnarukage.png" width="80px" height="80px">
+            <img id="danzo" src="assets/icon/danzo.png" width="80px" height="80px">	
+            <img id="tgaara" src="assets/icon/tgaara.png" width="80px" height="80px">      	    
+            <img id="santaruto" src="assets/icon/santaruto.png" width="80px" height="80px">
+            <img id="kidbito" src="assets/icon/kidbito.png" width="80px" height="80px">    
+            <img id="kidkashi" src="assets/icon/kidkashi.png" width="80px" height="80px">
+            <img id="minato" src="assets/icon/minato.png" width="80px" height="80px">    
+            <img id="sixt" src="assets/icon/sixt.png" width="80px" height="80px">
+            <img id="urmitsuki" src="assets/icon/urmitsuki.png" width="80px" height="80px">
+            <img id="papamaru" src="assets/icon/papamaru.png" width="80px" height="80px">
+            <img id="urkisame" src="assets/icon/urkisame.png" width="80px" height="80px">
+            <img id="beev2" src="assets/icon/beev2.png" width="80px" height="80px">	
+            <img id="mei" src="assets/icon/mei.png" width="80px" height="80px">
+            <img id="ohnoki" src="assets/icon/ohnoki.png" width="80px" height="80px">
+            <img id="kidsasuke" src="assets/icon/kidsasuke.png" width="80px" height="80px">
+            <img id="kidnaruto" src="assets/icon/kidnaruto.png" width="80px" height="80px">
+            <img id="kcmnaruto" src="assets/icon/kcmnaruto.png" width="80px" height="80px">
+            <img id="kushina" src="assets/icon/kushina.png" width="80px" height="80px">
+            <img id="whitemask" src="assets/icon/whitemask.png" width="80px" height="80px">
+            <img id="gskabuto" src="assets/icon/gskabuto.png" width="80px" height="80px"> 	
+            <img id="timeboruto" src="assets/icon/timeboruto.png" width="80px" height="80px">	
+            <img id="hashirama" src="assets/icon/hashirama.png" width="80px" height="80px">
+            <img id="tobirama" src="assets/icon/tobirama.png" width="80px" height="80px">
+            <img id="timesasuke" src="assets/icon/timesasuke.png" width="80px" height="80px">
+            <img id="nagato" src="assets/icon/nagato.png" width="80px" height="80px">
+            <img id="shikadai" src="assets/icon/shikadai.png" width="80px" height="80px">
+            <img id="edotachi" src="assets/icon/edotachi.png" width="80px" height="80px">
+            <img id="inojin" src="assets/icon/inojin.png" width="80px" height="80px">
+            <img id="madara" src="assets/icon/madara.png" width="80px" height="80px">
+            <img id="klmnaruto" src="assets/icon/klmnaruto.png" width="80px" height="80px">
+        </div>
+        <p style="text-align:center;">
+            Created by Classy#9273 with credits given to Teaisnt#9441 for elements and Patman27#4504 for unit links.<br />
+            All original assets belong to Bandai Namco. The <a href="https://www.nxbnt.com/">Tribes Database</a> contains all relevant info on the game.<br />
+            For further information and contact opportunities, join the <a href="https://discord.gg/eGB2YZBy6y">Team Building School Discord server.</a><br />
+            Check out my <a href="https://www.youtube.com/channel/UCw6SYOuzej1I90jIMbqU6rg">Youtube Channel</a> specializing in Tribes content including news and guides.
+        </p>
+        <script src='dist/dragula.js'></script>
+        <script src='js/scripts.js'></script>
     </body>
 </html>
