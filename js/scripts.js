@@ -38,7 +38,11 @@
             document.getElementById('bottom')], 
             {
                 accepts: function (el, target) {
-                    return target.children.length == 0
+                    if (target != document.getElementById('bottom')) {
+                        return (target.children.length == 0)
+                    } else {
+                        return true
+                    }
                 }
             });
 
